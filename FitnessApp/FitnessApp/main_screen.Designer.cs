@@ -36,6 +36,7 @@ namespace FitnessApp
             this.columnHeaderWorkoutPlan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFitnessGoal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnManageGoals = new System.Windows.Forms.Button();
+            this.btnWorkoutProgress = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewCustomers
@@ -124,17 +125,28 @@ namespace FitnessApp
             // 
             // btnManageGoals
             // 
-            this.btnManageGoals.Location = new System.Drawing.Point(1070, 442);
+            this.btnManageGoals.Location = new System.Drawing.Point(12, 378);
             this.btnManageGoals.Name = "btnManageGoals";
-            this.btnManageGoals.Size = new System.Drawing.Size(119, 38);
+            this.btnManageGoals.Size = new System.Drawing.Size(210, 38);
             this.btnManageGoals.TabIndex = 1;
             this.btnManageGoals.Text = "Manage Goals";
             this.btnManageGoals.UseVisualStyleBackColor = true;
             this.btnManageGoals.Click += new System.EventHandler(this.btnManageGoals_Click);
             // 
+            // btnWorkoutProgress
+            // 
+            this.btnWorkoutProgress.Location = new System.Drawing.Point(12, 433);
+            this.btnWorkoutProgress.Name = "btnWorkoutProgress";
+            this.btnWorkoutProgress.Size = new System.Drawing.Size(210, 38);
+            this.btnWorkoutProgress.TabIndex = 2;
+            this.btnWorkoutProgress.Text = "View Workout Progress";
+            this.btnWorkoutProgress.UseVisualStyleBackColor = true;
+            this.btnWorkoutProgress.Click += new System.EventHandler(this.btnWorkoutProgress_Click);
+            // 
             // main_screen
             // 
             this.ClientSize = new System.Drawing.Size(1252, 606);
+            this.Controls.Add(this.btnWorkoutProgress);
             this.Controls.Add(this.btnManageGoals);
             this.Controls.Add(this.listViewCustomers);
             this.Name = "main_screen";
@@ -145,5 +157,6 @@ namespace FitnessApp
         }
 
         private Button btnManageGoals;
+        private Button btnWorkoutProgress;
     }
 }

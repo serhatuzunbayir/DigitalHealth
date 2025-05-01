@@ -116,6 +116,12 @@ namespace FitnessApp
             goalForm.Show();
         }
 
+        private void btnWorkoutProgress_Click(object sender, EventArgs e)
+        {
+            WorkoutProgressForm progressForm = new WorkoutProgressForm();
+            progressForm.Show();
+        }
+
     }
 
     public class Customer

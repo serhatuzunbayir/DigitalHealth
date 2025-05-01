@@ -63,7 +63,7 @@
             // 
             this.btnAddGoal.Location = new System.Drawing.Point(32, 346);
             this.btnAddGoal.Name = "btnAddGoal";
-            this.btnAddGoal.Size = new System.Drawing.Size(75, 31);
+            this.btnAddGoal.Size = new System.Drawing.Size(84, 37);
             this.btnAddGoal.TabIndex = 3;
             this.btnAddGoal.Text = "Add Goal";
             this.btnAddGoal.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             this.listGoals.FullRowSelect = true;
             this.listGoals.GridLines = true;
             this.listGoals.HideSelection = false;
-            this.listGoals.Location = new System.Drawing.Point(526, 81);
+            this.listGoals.Location = new System.Drawing.Point(432, 68);
             this.listGoals.MultiSelect = false;
             this.listGoals.Name = "listGoals";
-            this.listGoals.Size = new System.Drawing.Size(214, 296);
+            this.listGoals.Size = new System.Drawing.Size(308, 326);
             this.listGoals.TabIndex = 4;
             this.listGoals.UseCompatibleStateImageBehavior = false;
             this.listGoals.View = System.Windows.Forms.View.Details;
