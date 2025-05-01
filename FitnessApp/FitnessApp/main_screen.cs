@@ -109,6 +109,13 @@ namespace FitnessApp
         private void listViewCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
+        private void btnManageGoals_Click(object sender, EventArgs e)
+        {
+            GoalTrackingForm goalForm = new GoalTrackingForm();
+            goalForm.Show();
+        }
+
     }
 
     public class Customer

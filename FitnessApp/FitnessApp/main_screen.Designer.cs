@@ -35,6 +35,7 @@ namespace FitnessApp
             this.columnHeaderWaistCircumference = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderWorkoutPlan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFitnessGoal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnManageGoals = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewCustomers
@@ -121,9 +122,20 @@ namespace FitnessApp
             this.columnHeaderFitnessGoal.Text = "Fitness Goal";
             this.columnHeaderFitnessGoal.Width = 180;
             // 
+            // btnManageGoals
+            // 
+            this.btnManageGoals.Location = new System.Drawing.Point(1070, 442);
+            this.btnManageGoals.Name = "btnManageGoals";
+            this.btnManageGoals.Size = new System.Drawing.Size(119, 38);
+            this.btnManageGoals.TabIndex = 1;
+            this.btnManageGoals.Text = "Manage Goals";
+            this.btnManageGoals.UseVisualStyleBackColor = true;
+            this.btnManageGoals.Click += new System.EventHandler(this.btnManageGoals_Click);
+            // 
             // main_screen
             // 
             this.ClientSize = new System.Drawing.Size(1252, 606);
+            this.Controls.Add(this.btnManageGoals);
             this.Controls.Add(this.listViewCustomers);
             this.Name = "main_screen";
             this.Text = "Customer Overview";
@@ -131,5 +143,7 @@ namespace FitnessApp
             this.ResumeLayout(false);
 
         }
+
+        private Button btnManageGoals;
     }
 }
