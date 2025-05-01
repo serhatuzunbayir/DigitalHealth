@@ -9,7 +9,10 @@ namespace FitnessApp
     internal class globals
 
     {
-        public static string connectionString = "Data Source=fitnessapp.db;Version=3;";
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;
+                   AttachDbFilename=|DataDirectory|\Database1.mdf;
+                   Integrated Security=True;
+                   Connect Timeout=30";
 
 
     }

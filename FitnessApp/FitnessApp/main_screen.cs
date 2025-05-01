@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Data.SQLite;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
@@ -8,6 +10,9 @@ namespace FitnessApp
 {
     public partial class main_screen : Form
     {
+        private readonly string connectionString =
+            globals.connectionString;
+
         public main_screen()
         {
             InitializeComponent();
@@ -20,69 +25,84 @@ namespace FitnessApp
 
         private void LoadCustomerData()
         {
-            using (var connection = new SQLiteConnection("Data Source=fitnessApp.db"))
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
                 string query = @"
-                    SELECT DISTINCT u.name, u.email, ui.age, ui.height, ui.weight, ui.body_mass_index, 
-                           ui.muscle_ratio, ui.fat_ratio, ui.gender, ui.waistCircumference, 
-                           wp.description AS workout_plan, fg.description AS fitness_goal
-                    FROM user u
-                    LEFT JOIN userInfos ui ON u.id = ui.userId
-                    LEFT JOIN workoutPlan wp ON u.id = wp.userId
-                    LEFT JOIN fitnessGoals fg ON u.id = fg.user_id
-                    WHERE u.role = 'customer'";
+                    SELECT 
+                        u.[name], 
+                        u.[email], 
+                        ui.[age], 
+                        ui.[height], 
+                        ui.[weight], 
+                        ui.[body_mass_index], 
+                        ui.[muscle_ratio], 
+                        ui.[fat_ratio], 
+                        ui.[gender], 
+                        ui.[waistCircumference], 
+                        wp.[description] AS workout_plan, 
+                        fg.[description] AS fitness_goal
+                    FROM [dbo].[Users] u
+                    LEFT JOIN [dbo].[UserInfos] ui 
+                        ON u.[id] = ui.[userId]
+                    LEFT JOIN [dbo].[WorkoutPlan] wp 
+                        ON u.[id] = wp.[userId]
+                    LEFT JOIN [dbo].[FitnessGoals] fg 
+                        ON u.[id] = fg.[user_id]
+                    WHERE u.[role] = 'customer';
+                ";
 
-                SQLiteCommand command = new SQLiteCommand(query, connection);
-                SQLiteDataReader reader = command.ExecuteReader();
-
-                List<Customer> customers = new List<Customer>();
-                while (reader.Read())
+                using (var cmd = new SqlCommand(query, connection))
+                using (var reader = cmd.ExecuteReader())
                 {
-                    customers.Add(new Customer
+                    var customers = new List<Customer>();
+                    while (reader.Read())
                     {
-                        Name = reader["name"].ToString(),
-                        Email = reader["email"].ToString(),
-                        Age = Convert.ToInt32(reader["age"]),
-                        Height = Convert.ToDouble(reader["height"]),
-                        Weight = Convert.ToDouble(reader["weight"]),
-                        BMI = Convert.ToDouble(reader["body_mass_index"]),
-                        MuscleRatio = Convert.ToDouble(reader["muscle_ratio"]),
-                        FatRatio = Convert.ToDouble(reader["fat_ratio"]),
-                        Gender = reader["gender"].ToString(),
-                        WaistCircumference = Convert.ToDouble(reader["waistCircumference"]),
-                        WorkoutPlan = reader["workout_plan"].ToString(),
-                        FitnessGoal = reader["fitness_goal"].ToString()
-                    });
-                }
+                        customers.Add(new Customer
+                        {
+                            Name = reader["name"].ToString(),
+                            Email = reader["email"].ToString(),
+                            Age = reader["age"] as int? ?? 0,
+                            Height = reader["height"] as double? ?? 0.0,
+                            Weight = reader["weight"] as double? ?? 0.0,
+                            BMI = reader["body_mass_index"] as double? ?? 0.0,
+                            MuscleRatio = reader["muscle_ratio"] as double? ?? 0.0,
+                            FatRatio = reader["fat_ratio"] as double? ?? 0.0,
+                            Gender = reader["gender"].ToString(),
+                            WaistCircumference = reader["waistCircumference"] as double? ?? 0.0,
+                            WorkoutPlan = reader["workout_plan"].ToString(),
+                            FitnessGoal = reader["fitness_goal"].ToString()
+                        });
+                    }
 
-                var sortedCustomers = customers.OrderBy(c => c.Weight).ToList(); 
+                    var sortedCustomers = customers.OrderBy(c => c.Weight).ToList();
 
-                listViewCustomers.Items.Clear();
-                foreach (var customer in sortedCustomers)
-                {
-                    var row = new string[]
+                    listViewCustomers.Items.Clear();
+                    foreach (var customer in sortedCustomers)
                     {
-                        customer.Name,
-                        customer.Email,
-                        customer.Age.ToString(),
-                        customer.Height.ToString(),
-                        customer.Weight.ToString(),
-                        customer.BMI.ToString(),
-                        customer.MuscleRatio.ToString(),
-                        customer.FatRatio.ToString(),
-                        customer.Gender,
-                        customer.WaistCircumference.ToString(),
-                        customer.WorkoutPlan,
-                        customer.FitnessGoal
-                    };
+                        var row = new string[]
+                        {
+                            customer.Name,
+                            customer.Email,
+                            customer.Age.ToString(),
+                            customer.Height.ToString("F2"),
+                            customer.Weight.ToString("F2"),
+                            customer.BMI.ToString("F2"),
+                            customer.MuscleRatio.ToString("F2"),
+                            customer.FatRatio.ToString("F2"),
+                            customer.Gender,
+                            customer.WaistCircumference.ToString("F2"),
+                            customer.WorkoutPlan,
+                            customer.FitnessGoal
+                        };
 
-                    ListViewItem item = new ListViewItem(row);
-                    listViewCustomers.Items.Add(item);
+                        var item = new ListViewItem(row);
+                        listViewCustomers.Items.Add(item);
+                    }
+
+                    Console.WriteLine($"Number of rows: {sortedCustomers.Count}");
                 }
-
-                Console.WriteLine("Number of rows: " + sortedCustomers.Count);
             }
         }
 

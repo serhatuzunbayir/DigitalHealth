@@ -107,3 +107,5 @@ C:\Users\Emirhan\Documents\GitHub\DigitalHealth\FitnessApp\FitnessApp\obj\Debug\
 C:\Users\Emirhan\Documents\GitHub\DigitalHealth\FitnessApp\FitnessApp\obj\Debug\FitnessApp.exe
 C:\Users\Emirhan\Documents\GitHub\DigitalHealth\FitnessApp\FitnessApp\obj\Debug\FitnessApp.pdb
 C:\Users\Emirhan\Documents\GitHub\DigitalHealth\FitnessApp\FitnessApp\obj\Debug\FitnessApp.main_screen.resources
+C:\Users\Emirhan\Documents\GitHub\DigitalHealth\FitnessApp\FitnessApp\bin\Debug\Database1.mdf
+C:\Users\Emirhan\Documents\GitHub\DigitalHealth\FitnessApp\FitnessApp\bin\Debug\Database1_log.ldf

@@ -117,6 +117,8 @@
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
+
 
         }
     }

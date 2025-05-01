@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -91,46 +93,80 @@ namespace FitnessApp
 
         private bool RegisterUser(string name, string email, string password, int age, float height, float weight, float waistCircumference, float bmi, float muscleRatio, float fatRatio, string gender)
         {
-            using (var connection = new SQLiteConnection(connectionString))
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string checkQuery = "SELECT COUNT(*) FROM user WHERE email = @Email";
-                using (var checkCmd = new SQLiteCommand(checkQuery, connection))
+                string checkQuery = @"
+            SELECT COUNT(1)
+            FROM [dbo].[Users]
+            WHERE [email] = @Email
+        ";
+                using (var checkCmd = new SqlCommand(checkQuery, connection))
                 {
                     checkCmd.Parameters.AddWithValue("@Email", email);
-                    long count = (long)checkCmd.ExecuteScalar();
+                    int count = (int)checkCmd.ExecuteScalar();
                     if (count > 0)
                         return false;
                 }
 
-                string query = "INSERT INTO user (name, email, password) VALUES (@Name, @Email, @Password)";
-                using (var cmd = new SQLiteCommand(query, connection))
+                string insertUserQuery = @"
+            INSERT INTO [dbo].[Users] ([name], [email], [password])
+            VALUES (@Name, @Email, @Password);
+            SELECT CAST(SCOPE_IDENTITY() AS INT);
+        ";
+                int userId;
+                using (var insertCmd = new SqlCommand(insertUserQuery, connection))
                 {
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
-                    cmd.ExecuteNonQuery();
+                    insertCmd.Parameters.Add("@Name", SqlDbType.NVarChar, 255).Value = name;
+                    insertCmd.Parameters.Add("@Email", SqlDbType.NVarChar, 255).Value = email;
+                    insertCmd.Parameters.Add("@Password", SqlDbType.NVarChar, 128).Value = password;
+
+                    userId = Convert.ToInt32(insertCmd.ExecuteScalar());
                 }
 
-                long userId = connection.LastInsertRowId;
 
-                string infoQuery = @"INSERT INTO userInfos 
-                    (userId, updated_at, age, height, weight, waistCircumference, body_mass_index, muscle_ratio, fat_ratio, gender) 
-                    VALUES 
-                    (@UserId, datetime('now'), @Age, @Height, @Weight, @WaistCircumference, @BMI, @MuscleRatio, @FatRatio, @Gender)";
+                string insertInfoQuery = @"
+            INSERT INTO [dbo].[UserInfos]
+            (
+                [userId],
+                [updated_at],
+                [age],
+                [height],
+                [weight],
+                [waistCircumference],
+                [body_mass_index],
+                [muscle_ratio],
+                [fat_ratio],
+                [gender]
+            )
+            VALUES
+            (
+                @UserId,
+                GETDATE(),
+                @Age,
+                @Height,
+                @Weight,
+                @WaistCircumference,
+                @BMI,
+                @MuscleRatio,
+                @FatRatio,
+                @Gender
+            );
+        ";
 
-                using (var infoCmd = new SQLiteCommand(infoQuery, connection))
+                using (var infoCmd = new SqlCommand(insertInfoQuery, connection))
                 {
-                    infoCmd.Parameters.AddWithValue("@UserId", userId);
-                    infoCmd.Parameters.AddWithValue("@Age", age);
-                    infoCmd.Parameters.AddWithValue("@Height", height);
-                    infoCmd.Parameters.AddWithValue("@Weight", weight);
-                    infoCmd.Parameters.AddWithValue("@WaistCircumference", waistCircumference);
-                    infoCmd.Parameters.AddWithValue("@BMI", bmi);
-                    infoCmd.Parameters.AddWithValue("@MuscleRatio", muscleRatio);
-                    infoCmd.Parameters.AddWithValue("@FatRatio", fatRatio);
-                    infoCmd.Parameters.AddWithValue("@Gender", gender);
+                    infoCmd.Parameters.Add("@UserId", SqlDbType.Int).Value = userId;
+                    infoCmd.Parameters.Add("@Age", SqlDbType.Int).Value = age;
+                    infoCmd.Parameters.Add("@Height", SqlDbType.Float).Value = height;
+                    infoCmd.Parameters.Add("@Weight", SqlDbType.Float).Value = weight;
+                    infoCmd.Parameters.Add("@WaistCircumference", SqlDbType.Float).Value = waistCircumference;
+                    infoCmd.Parameters.Add("@BMI", SqlDbType.Float).Value = bmi;
+                    infoCmd.Parameters.Add("@MuscleRatio", SqlDbType.Float).Value = muscleRatio;
+                    infoCmd.Parameters.Add("@FatRatio", SqlDbType.Float).Value = fatRatio;
+                    infoCmd.Parameters.Add("@Gender", SqlDbType.NVarChar, 20).Value = gender;
+
                     infoCmd.ExecuteNonQuery();
                 }
 
