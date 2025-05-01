@@ -25,51 +25,52 @@ namespace FitnessApp
 
             if (string.IsNullOrEmpty(name) || name.Length < 3)
             {
-                MessageBox.Show("Lütfen geçerli bir isim girin (en az 3 karakter).");
+                MessageBox.Show("Please enter a valid name (at least 3 characters).");
                 return;
             }
 
             if (!IsValidEmail(email))
             {
-                MessageBox.Show("Geçerli bir e-posta adresi girin.");
+                MessageBox.Show("Please enter a valid email address.");
                 return;
             }
 
             if (string.IsNullOrEmpty(password) || password.Length < 6)
             {
-                MessageBox.Show("Şifre en az 6 karakter uzunluğunda olmalıdır.");
+                MessageBox.Show("Password must be at least 6 characters long.");
                 return;
             }
 
             if (!int.TryParse(txtAge.Text, out age) || age < 18 || age > 100)
             {
-                MessageBox.Show("Lütfen geçerli bir yaş girin (18-100 arası).");
+                MessageBox.Show("Please enter a valid age (between 18 and 100).");
                 return;
             }
 
             if (!float.TryParse(txtHeight.Text, out height) || height <= 0 || height > 250)
             {
-                MessageBox.Show("Lütfen geçerli bir boy girin (0-250 cm).");
+                MessageBox.Show("Please enter a valid height (0–250 cm).");
                 return;
             }
 
             if (!float.TryParse(txtWeight.Text, out weight) || weight <= 0 || weight > 300)
             {
-                MessageBox.Show("Lütfen geçerli bir kilo girin (0-300 kg).");
+                MessageBox.Show("Please enter a valid weight (0–300 kg).");
                 return;
             }
 
             if (!float.TryParse(txtWaistCircumference.Text, out waistCircumference) || waistCircumference <= 0 || waistCircumference > 200)
             {
-                MessageBox.Show("Lütfen geçerli bir bel çevresi girin (0-200 cm).");
+                MessageBox.Show("Please enter a valid waist circumference (0–200 cm).");
                 return;
             }
 
             if (string.IsNullOrEmpty(gender))
             {
-                MessageBox.Show("Lütfen bir cinsiyet seçin.");
+                MessageBox.Show("Please select a gender.");
                 return;
             }
+
 
             float bmi = CalculateBMI(weight, height);
             float muscleRatio = CalculateMuscleRatio(weight, height, waistCircumference);

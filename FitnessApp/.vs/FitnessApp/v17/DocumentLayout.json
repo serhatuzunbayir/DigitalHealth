@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Emirhan\\source\\repos\\FitnessApp\\",
+  "WorkspaceRootPath": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|c:\\users\\emirhan\\source\\repos\\fitnessapp\\fitnessapp\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|c:\\users\\emirhan\\documents\\github\\digitalhealth\\fitnessapp\\fitnessapp\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|c:\\users\\emirhan\\documents\\github\\digitalhealth\\fitnessapp\\fitnessapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|c:\\users\\emirhan\\documents\\github\\digitalhealth\\fitnessapp\\fitnessapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|c:\\users\\emirhan\\documents\\github\\digitalhealth\\fitnessapp\\fitnessapp\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|c:\\users\\emirhan\\documents\\github\\digitalhealth\\fitnessapp\\fitnessapp\\main_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0F05B2E-37CB-4CC9-A364-E9C6142255C9}|FitnessApp\\FitnessApp.csproj|solutionrelative:fitnessapp\\main_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +39,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "globals.cs",
-              "DocumentMoniker": "C:\\Users\\Emirhan\\source\\repos\\FitnessApp\\FitnessApp\\globals.cs",
-              "RelativeDocumentMoniker": "FitnessApp\\globals.cs",
-              "ToolTip": "C:\\Users\\Emirhan\\source\\repos\\FitnessApp\\FitnessApp\\globals.cs",
-              "RelativeToolTip": "FitnessApp\\globals.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "FitnessApp\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\DatabaseHelper.cs",
+              "RelativeToolTip": "FitnessApp\\DatabaseHelper.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwEIAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T16:11:29.911Z",
+              "WhenOpened": "2025-05-01T10:20:44.788Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\LoginForm.cs",
+              "RelativeDocumentMoniker": "FitnessApp\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\LoginForm.cs",
+              "RelativeToolTip": "FitnessApp\\LoginForm.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAtwBwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T11:28:09.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\LoginForm.cs",
+              "RelativeDocumentMoniker": "FitnessApp\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\LoginForm.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FitnessApp\\LoginForm.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T11:28:07.773Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "FitnessApp\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\LoginForm.Designer.cs",
+              "RelativeToolTip": "FitnessApp\\LoginForm.Designer.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAD4v1sAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T11:24:56.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main_screen.cs",
+              "DocumentMoniker": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\main_screen.cs",
+              "RelativeDocumentMoniker": "FitnessApp\\main_screen.cs",
+              "ToolTip": "C:\\Users\\Emirhan\\Documents\\GitHub\\DigitalHealth\\FitnessApp\\FitnessApp\\main_screen.cs",
+              "RelativeToolTip": "FitnessApp\\main_screen.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAiwBQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T11:01:32.223Z",
               "EditorCaption": ""
             }
           ]

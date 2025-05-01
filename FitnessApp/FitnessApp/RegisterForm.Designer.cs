@@ -79,7 +79,7 @@ namespace FitnessApp
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 23);
             this.btnRegister.TabIndex = 7;
-            this.btnRegister.Text = "Kayıt Ol";
+            this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -90,7 +90,7 @@ namespace FitnessApp
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 20);
             this.lblName.TabIndex = 4;
-            this.lblName.Text = "İsim";
+            this.lblName.Text = "Name";
             // 
             // lblEmail
             // 
@@ -99,7 +99,7 @@ namespace FitnessApp
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(65, 20);
             this.lblEmail.TabIndex = 5;
-            this.lblEmail.Text = "E-posta";
+            this.lblEmail.Text = "E-mail";
             // 
             // lblPassword
             // 
@@ -108,7 +108,7 @@ namespace FitnessApp
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(42, 20);
             this.lblPassword.TabIndex = 6;
-            this.lblPassword.Text = "Şifre";
+            this.lblPassword.Text = "Password";
             // 
             // lblTitle
             // 
@@ -118,7 +118,7 @@ namespace FitnessApp
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(199, 37);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Kayıt Ekranı";
+            this.lblTitle.Text = "Trainer Register Screen";
             // 
             // panelMain
             // 
@@ -154,7 +154,7 @@ namespace FitnessApp
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(37, 20);
             this.lblAge.TabIndex = 8;
-            this.lblAge.Text = "Yaş";
+            this.lblAge.Text = "Age";
             // 
             // txtAge
             // 
@@ -170,7 +170,7 @@ namespace FitnessApp
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(71, 20);
             this.lblHeight.TabIndex = 9;
-            this.lblHeight.Text = "Boy (cm)";
+            this.lblHeight.Text = "Height (cm)";
             // 
             // txtHeight
             // 
@@ -186,7 +186,7 @@ namespace FitnessApp
             this.lblWeight.Name = "lblWeight";
             this.lblWeight.Size = new System.Drawing.Size(65, 20);
             this.lblWeight.TabIndex = 10;
-            this.lblWeight.Text = "Kilo (kg)";
+            this.lblWeight.Text = "Weight (kg)";
             // 
             // txtWeight
             // 
@@ -202,7 +202,7 @@ namespace FitnessApp
             this.lblWaistCircumference.Name = "lblWaistCircumference";
             this.lblWaistCircumference.Size = new System.Drawing.Size(123, 20);
             this.lblWaistCircumference.TabIndex = 11;
-            this.lblWaistCircumference.Text = "Bel Çevresi (cm)";
+            this.lblWaistCircumference.Text = "Waist \nCircumference(cm)";
             // 
             // txtWaistCircumference
             // 
@@ -218,13 +218,13 @@ namespace FitnessApp
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(64, 20);
             this.lblGender.TabIndex = 12;
-            this.lblGender.Text = "Cinsiyet";
+            this.lblGender.Text = "Gender";
             // 
             // cmbGender
             // 
             this.cmbGender.Items.AddRange(new object[] {
-            "Erkek",
-            "Kadın"});
+            "Male",
+            "Female"});
             this.cmbGender.Location = new System.Drawing.Point(203, 413);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(200, 28);
@@ -236,7 +236,7 @@ namespace FitnessApp
             this.Controls.Add(this.panelMain);
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kayıt Ol";
+            this.Text = "Register";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.ResumeLayout(false);

@@ -20,11 +20,14 @@ namespace FitnessApp
 
             if (ValidateLogin(email, password))
             {
-                MessageBox.Show("Giriş başarılı!");
+                MessageBox.Show("Login succesfull!");
+                this.Hide(); // Hide the login form
+                main_screen mainScreen = new main_screen(); // Create an instance of main_screen
+                mainScreen.Show();
             }
             else
             {
-                MessageBox.Show("Geçersiz e-posta veya şifre.");
+                MessageBox.Show("Invalıd e-mail or password.");
             }
         }
 
@@ -33,14 +36,13 @@ namespace FitnessApp
             using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT * FROM user WHERE email = @Email AND password = @Password";
+                string query = "SELECT * FROM user WHERE email = @Email AND password = @Password AND role='trainer'";
                 SQLiteCommand cmd = new SQLiteCommand(query, connection);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Password", password);
 
                 SQLiteDataReader reader = cmd.ExecuteReader(); 
                 return reader.HasRows;
-
             }
         }
 
@@ -52,6 +54,11 @@ namespace FitnessApp
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
         {
 
         }
