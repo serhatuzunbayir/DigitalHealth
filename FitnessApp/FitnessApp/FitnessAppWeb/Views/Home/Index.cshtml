@@ -1,0 +1,23 @@
+﻿<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">LOGIN PANEL</h1>
+        <div style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 2px 2px 12px #aaa;">
+            <form method="post" action="/Home/About">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" required />
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required />
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+                <div style="margin-top: 10px; text-align: center;">
+                    <p>Don't have an account? <a href="/Home/Contact">Register here</a>.</p>
+                </div>
+            </form>
+        </div>
+    </section>        
+</main>

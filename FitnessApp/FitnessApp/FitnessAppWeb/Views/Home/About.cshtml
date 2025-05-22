@@ -1,0 +1,254 @@
+﻿<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="aspnetTitle">MAIN MENU</h1>
+
+        <style>
+            body {
+                background-color: #f1f1f1;
+            }
+
+            .sidebar {
+                height: 100vh;
+                background-color: #343a40;
+                padding-top: 20px;
+                color: white;
+            }
+
+                .sidebar a {
+                    color: white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 10px 20px;
+                }
+
+                    .sidebar a:hover {
+                        background-color: #495057;
+                    }
+
+            .content {
+                padding: 30px;
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3 sidebar">
+                    <a href="#" onclick="showSection('personal-info')">Personal Information</a>
+                    <a href="#" onclick="showSection('workout-progress')">Workout Schedule</a>
+                    <a href="#" onclick="showSection('track-workout')">Track Workout</a>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-md-9 content">
+
+                    <!-- Personal Information -->
+                    <div id="personal-info">
+                        <h3>Personal Information</h3>
+                        <form method="post" action="/Account/UpdateProfile">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" name="Name" value="Mehmet" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>E-mail</label>
+                                    <input type="email" class="form-control" name="Email" value="mehmet@example.com" />
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label>Age</label>
+                                    <input type="number" class="form-control" name="Age" value="40" />
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label>Height (cm)</label>
+                                    <input type="number" class="form-control" name="Height" value="170" />
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label>Weight (kg)</label>
+                                    <input type="number" class="form-control" name="Weight" value="80" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Waist Circumference (cm)</label>
+                                    <input type="number" class="form-control" name="Waist" value="80" />
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Gender</label>
+                                    <select class="form-select" name="Gender">
+                                        <option value="Male" selected>Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
+
+                    <!-- Workout Progress -->
+                    <div id="workout-progress" class="hidden">
+                        <h3>Weekly Workout Schedule</h3>
+                        <form method="post" action="/Workout/SaveWeeklyPlan">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Squat (reps)</th>
+                                            <th>Push-Up (reps)</th>
+                                            <th>Plank (seconds)</th>
+                                            <th>Cardio (minutes)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>Monday</td>
+                                            <td><input type="number" name="Plan(Monday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Monday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Monday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Monday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tuesday</td>
+                                            <td><input type="number" name="Plan(Tuesday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Tuesday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Tuesday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Tuesday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wednesday</td>
+                                            <td><input type="number" name="Plan(Wednesday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Wednesday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Wednesday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Wednesday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thursday</td>
+                                            <td><input type="number" name="Plan(Thursday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Thursday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Thursday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Thursday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Friday</td>
+                                            <td><input type="number" name="Plan(Friday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Friday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Friday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Friday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Saturday</td>
+                                            <td><input type="number" name="Plan(Saturday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Saturday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Saturday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Saturday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sunday</td>
+                                            <td><input type="number" name="Plan(Sunday).Squat" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Sunday).PushUp" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Sunday).Plank" class="form-control" min="0" /></td>
+                                            <td><input type="number" name="Plan(Sunday).Cardio" class="form-control" min="0" /></td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Plan</button>
+                        </form>
+                    </div>
+
+                    <!-- Track Workout -->
+                    <div id="track-workout" class="hidden">
+                        <form method="post" action="/Workout/TrackProgress">
+                            <h3>Track Workout Progress</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Squat</th>
+                                            <th>Push-Up</th>
+                                            <th>Plank</th>
+                                            <th>Cardio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>Monday</td>
+                                            <td><input type="checkbox" name="Track(Monday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Monday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Monday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Monday).CardioDone" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tuesday</td>
+                                            <td><input type="checkbox" name="Track(Tuesday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Tuesday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Tuesday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Tuesday).CardioDone" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wednesday</td>
+                                            <td><input type="checkbox" name="Track(Wednesday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Wednesday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Wednesday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Wednesday).CardioDone" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thursday</td>
+                                            <td><input type="checkbox" name="Track(Thursday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Thursday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Thursday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Thursday).CardioDone" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Friday</td>
+                                            <td><input type="checkbox" name="Track(Friday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Friday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Friday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Friday).CardioDone" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Saturday</td>
+                                            <td><input type="checkbox" name="Track(Saturday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Saturday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Saturday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Saturday).CardioDone" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sunday</td>
+                                            <td><input type="checkbox" name="Track(Sunday).SquatDone" /></td>
+                                            <td><input type="checkbox" name="Track(Sunday).PushUpDone" /></td>
+                                            <td><input type="checkbox" name="Track(Sunday).PlankDone" /></td>
+                                            <td><input type="checkbox" name="Track(Sunday).CardioDone" /></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button type="submit" class="btn btn-success">Save Workout Progress</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showSection(sectionId) {
+                document.getElementById('personal-info').classList.add('hidden');
+                document.getElementById('workout-progress').classList.add('hidden');
+                document.getElementById('track-workout').classList.add('hidden');
+
+                document.getElementById(sectionId).classList.remove('hidden');
+            }
+        </script>
+
+    </section>
+</main>

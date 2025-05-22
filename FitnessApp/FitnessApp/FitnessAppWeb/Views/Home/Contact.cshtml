@@ -1,0 +1,74 @@
+﻿<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="aspnetTitle">REGISTER</h1>
+
+        <style>
+            body {
+                background-color: #f8f9fa;
+            }
+
+            .register-container {
+                max-width: 500px;
+                margin: 50px auto;
+                padding: 30px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            }
+
+            .form-control {
+                margin-bottom: 15px;
+            }
+        </style>
+
+
+        <div class="register-container">
+            <h2 class="text-center mb-4">Create an Account</h2>
+            <form method="post" action="/Home/About">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="Name" required />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="Email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="Password" required />
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" name="Age" min="0" required />
+                </div>
+                <div class="mb-3">
+                    <label for="height" class="form-label">Height (cm)</label>
+                    <input type="number" class="form-control" id="height" name="Height" min="0" required />
+                </div>
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" class="form-control" id="weight" name="Weight" min="0" required />
+                </div>
+                <div class="mb-3">
+                    <label for="waist" class="form-label">Waist Circumference (cm)</label>
+                    <input type="number" class="form-control" id="waist" name="WaistCircumference" min="0" required />
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="Gender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Register</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="/Home/Index">Already have an account? Login</a>
+            </div>
+        </div>
+    </section>
+</main>
+
